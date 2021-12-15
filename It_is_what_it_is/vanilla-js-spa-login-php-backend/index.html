@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Single Page Application - Interdisciplinary Project</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Get started with HTML, CSS and JavaScript">
+  <meta name="author" content="Rasmus Cederdorff">
+  <link rel="stylesheet" href="./css/style.css">
+  <link rel="shortcut icon" type="image/png" href="./img/favicon.png" />
+
+</head>
+
+<body>
+  <!-------------- Navigation -------------->
+  <nav class="tabbar">
+    <a class="nav-link" href="#/">Home</a>
+    <!--<a class="nav-link" href="">Search</a>-->
+    <a class="nav-link" href="#/add">Add</a>
+    <a class="nav-link" href="#/profile" id="profile-page">Profile </a>
+
+
+  </nav>
+
+  <main id="appRoot">
+    <!-------------- Pages -------------->
+
+    <!-- login page -->
+    <section id="login" class="page">
+      <header class="topbar">
+        <h2>Login</h2>
+      </header>
+        <div id="logo-container">
+           <img src="img/Earth_Wise_nobg.png" id="logo"> 
+           <p style="color:#707070">Do not Waste Food <br>
+            Be Earth Wise !</p>
+        </div>
+        
+      
+      <p class="login-message"></p>
+      <form>
+        <input id="login-username" type="text" placeholder="Type username">
+        <input id="login-password" type="password" placeholder="Password">
+        <button type="button" id="btn-login">Login</button>
+      </form>
+      <p>Don't have an account? <a class="nav-link" href="#/signup">Sign up</a></p>
+
+    </section>
+
+    <!-- signup page -->
+    <section id="signup" class="page">
+      <header class="topbar">
+        <h2>Sign Up</h2>
+      </header>
+      <p>Sign up</p>
+      <p class="signup-message"></p>
+      <form>
+        <input id="signup-username" type="text" placeholder="Type username" autocomplete="new-username">
+        <input id="signup-email" type="email" name="email" placeholder="Type email">
+        <input id="signup-password" type="password" placeholder="Password" autocomplete="new-password">
+        <input id="signup-password-check" type="password" placeholder="Repeat Password" autocomplete="new-password">
+
+        <button type="button" id="btn-signup">Sign up</button>
+      </form>
+    </section>
+
+    <section id="signup_2step" class="page">
+      <header class="topbar">
+        <h2>Create a Profile</h2>
+      </header>
+      <!--<p>Sign up second step</p> -->
+      <p class="signup_2step-message"></p>
+      <form>
+        <section style="white-space: nowrap;">
+          <!-- <div style="display: block;">
+            <img style="height: 50px; width: auto;" src="img/icon.png">
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+              <input id="signup_2step-profilePic" type="file" name="fileToUpload">
+            </form>
+          </div>-->
+        </section> <input id="signup_2step-firstname" type="text" name="firstname" placeholder="Type Firstname">
+        <input id="signup_2step-lastname" type="text" name="lastname" placeholder="Type Lastname">
+        <input id="signup_2step-phoneNr" type="tel" name="phoneNr" placeholder="Type Phone Number">
+
+
+        <input id="signup_2step-interests" type="text" placeholder="Type intersts">
+
+        <button type="button" id="btn-signup_2step">Create Profile</button>
+      </form>
+    </section>
+
+    <!-- home page -->
+    <section id="home" class="page">
+      <header class="topbar">
+        <h2>Home</h2>
+
+      </header>
+      <p>This is the home Page</p>
+      <div id="home-grid">
+        <h1>display some feed</h1>
+      </div>
+    </section>
+
+    <!-- Add page -->
+    <section id="add" class="page">
+      <header class="topbar">
+        <h2>Add an Item</h2>
+      </header>
+
+      <p class="add-message"></p>
+      <form>
+        <input id="add-title" type="text" placeholder="Title" required>
+        <textarea id="add-description" type="text" name="description" placeholder="Few words description of the product"
+          required></textarea>
+        <input id="add-price" type="number" placeholder="Price in DKK">
+        <input id="add-address" type="text" placeholder="Addres (optional)">
+        <input id="add-phoneNr" type="text" placeholder="Phone Number">
+
+        <!-- 
+        <input type="file" name="fileToUpload" id="PostfileToUploadUpdate" accept="image/*"> -->
+        <p> Pick the category the product relate to:<br> Just tap to select </p>
+
+        <div id="Category">
+          <span class="vegan filter_category unactive" id="xtest" name="vegan" value="vegan">#vegan</span>
+          <span class="vegetarian filter_category unactive">#vegetarian</span>
+          <span class="meals filter_category unactive">#meals</span>
+          <span class="dairy filter_category unactive">#dairy</span>
+          <span class="pastry filter_category unactive">#pastry</span>
+          <span class="fruits filter_category unactive">#fruits</span>
+          <span class="vegetables filter_category unactive">#vegetables</span>
+          <span class="glutenfree filter_category unactive">#gluten free</span>
+          <span class="lactosefree filter_category unactive">#lactose free</span>
+        </div>
+      </form>
+      <button type="submit" id="btn-add-item" class=""> Add Item</button>
+    </section>
+
+
+
+
+    <!-- profile page -->
+    <section id="profile" class="page">
+      <header class="topbar">
+        <h2>Profile</h2>
+        <a class="right" id="btn-logout">Logout</a>
+
+      </header>
+      <p class="profile-message"> Refresh the page to see updated info</p>
+      <section id="user-data"></section>
+
+      <a class="nav-link" href="#/edit_profile"><button type="button" id="btn-go-to-edit-profile" class="edit_buttons">
+          Edit Profile</button></a>
+
+
+
+
+
+      <div id="delete-btn">
+        <a class="nav-link" href="#/Delete_profile">
+          <button type="button" style="width: auto; margin: -20px; background-color: rgb(209, 72, 72);" id="deleteProfile"
+            class="edit_buttons">
+            Delete Profile
+          </button>
+        </a>
+      </div>
+    </section>
+
+    <!-- Edit profile page -->
+    <section id="edit_profile" class="page">
+      <header class="topbar">
+        <h2>Edit Profile</h2>
+        <!-- <a class="right" id="btn-logout">Logout</a>-->
+      </header>
+
+      <p class="edit-profile-message"></p>
+      <form>
+        <section style="white-space: nowrap;">
+
+          <a class="nav-link" href="#/update_profile_pic">
+            <button type="button" id="update_profile_pic-btn">
+              Update Profile Picture
+            </button>
+          </a>
+
+        </section> <input id="edit_profile-firstname" type="text" name="firstname" placeholder="Edit Firstname">
+        <input id="edit_profile-lastname" type="text" name="lastname" placeholder="Edit Lastname">
+        <input id="edit_profile-phoneNr" type="tel" name="phoneNr" placeholder="Edit Phone Number">
+        <input id="edit_profile-email" type="email" name="email" placeholder="Edit email">
+
+
+        <a class="nav-link" href="#/update_pwd" id="update_pwd">
+          Update Password
+        </a><br>
+
+        <button type="button" id="btn-edit-profile" class="edit_buttons">Save Changes</button>
+      </form>
+
+      <section id="edit-user-data"></section>
+    </section>
+
+    <!-- Update Profile pic -->
+    <section id="update_profile_pic" class="page">
+
+      <header class="topbar">
+        <h2>Update Profile Picture</h2>
+        <!-- <a class="right" id="btn-logout">Logout</a>-->
+      </header>
+      <p class="update-pic-message"></p>
+
+      <form>
+        <input type="file" name="fileToUpload" id="fileToUploadUpdate" accept="image/*">
+        <button type="button" id="update-pic" onclick="updateProfilePic()">Save</button>
+      </form>
+    </section>
+
+    <!-- update password -->
+    <section id="update_password" class="page">
+      <header class="topbar">
+        <h2>Update Password</h2>
+        <!-- <a class="right" id="btn-logout">Logout</a>-->
+      </header>
+
+      <p class="update-pwd-message"></p>
+      <form>
+        <input id="update-pwd-init-password" type="password" placeholder="Current Password"
+          autocomplete="new-password"><br>
+        <input id="update-pwd-password" type="password" placeholder="New Password" autocomplete="new-password">
+        <input id="update-pwd-password-check" type="password" placeholder="Repeat New Password"
+          autocomplete="new-password">
+
+        <button type="button" id="btn-update-pwd" class="edit_buttons"> Change Password</button>
+      </form>
+
+      <section id="edit-user-data"></section>
+    </section>
+  </main>
+
+  <!-- Delete Profile Page -->
+  <section id="delete_profile" class="page">
+    <header class="topbar">
+      <h2>Delete Profile</h2>
+      <!-- <a class="right" id="btn-logout">Logout</a>-->
+    </header>
+
+    <p class="delete-profile-message"></p>
+
+    <h3>Are you sure you want to delete your profile?</h3>
+    <div>
+      <button id="drop-profile">Yes</button>
+      <a class="nav-link" href="#/profile">
+        <button>Cancel</button>
+      </a>
+    </div>
+    </div>
+
+  </section>
+
+  <script src="./js/app.js" type="module"></script>
+</body>
+
+</html>
