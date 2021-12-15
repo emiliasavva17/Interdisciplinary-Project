@@ -13,6 +13,7 @@ CREATE TABLE `users` (
   `email` varchar(50) DEFAULT NULL,
   `phoneNr` varchar(20) DEFAULT null,
   `profile_pic` VARCHAR(50) DEFAULT NULL,
+  `username` varchar(50),
 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=58 DEFAULT CHARSET=utf8;
